@@ -6,6 +6,7 @@ const { getConnection } = require("./db/database");
 // Importar las rutas
 const authRoutes = require("./routes/auth");
 const productosRoutes = require("./routes/productos");
+const carritoRoutes = require("./routes/carrito");
 
 const app = express();
 const PORT = 3000;
@@ -44,6 +45,7 @@ app.get("/api/usuarios", async (req, res) => {
 // Rutas principales
 app.use("/auth", authRoutes);
 app.use("/api/productos", productosRoutes);
+app.use("/api/cart", carritoRoutes);
 
 // Ruta raíz
 app.get("/", (req, res) => {
