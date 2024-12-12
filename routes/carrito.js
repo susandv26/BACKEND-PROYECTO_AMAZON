@@ -7,9 +7,9 @@ const router = express.Router();
 router.post("/", addToCart);
 
 // Ruta para obtener el contenido del carrito
-/*router.get("/:id_usuario", getCart);*/
+router.get("/:id_usuario", getCart);
 
 // Ruta para eliminar un producto del carrito
-/*router.delete("/:id_carrito_product", deleteCartItem);*/
+router.delete("/:id_carrito_product", deleteCartItem);
 
 module.exports = router;
