@@ -7,6 +7,8 @@ const { getConnection } = require("./db/database");
 const authRoutes = require("./routes/auth");
 const productosRoutes = require("./routes/productos");
 const carritoRoutes = require("./routes/carrito");
+const cardRouter = require("./routes/cards");
+
 
 const app = express();
 const PORT = 3000;
@@ -45,7 +47,8 @@ app.get("/api/usuarios", async (req, res) => {
 // Rutas principales
 app.use("/auth", authRoutes);
 app.use("/api/productos", productosRoutes);
-app.use("/api/cart", carritoRoutes);
+app.use("/api/carrito", carritoRoutes);
+app.use("/api/card", cardRouter);
 
 // Ruta raíz
 app.get("/", (req, res) => {
@@ -54,7 +57,7 @@ app.get("/", (req, res) => {
 
 // Inicia el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT} xd`);
 });
 
 
